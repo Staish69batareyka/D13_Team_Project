@@ -23,9 +23,9 @@ def main() -> Dict[str, Any]:
     
     with open(file_path, "r", encoding="utf-8") as file:
         doctor_data: Dict[str, Any] = json.load(file)
-    
+
     return doctor_data
 
 if __name__ == "__main__":
     result = main()
-    #print(result)
+    # print(result)

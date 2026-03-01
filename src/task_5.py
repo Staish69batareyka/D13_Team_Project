@@ -10,7 +10,7 @@ def main() -> str:
     if save_answer:
         filename = input("Enter the name of the file where the recipe should be saved: ")
     recipe = doctor.write_recipe(filename)
-    #print(recipe)
+    # print(recipe)
     return recipe
 
 
