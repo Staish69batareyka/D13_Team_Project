@@ -1,4 +1,3 @@
-
 from src.config_6 import SMTPSettings
 from src.email_7 import EmailMessage, EmailSender
 

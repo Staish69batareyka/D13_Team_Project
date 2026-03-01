@@ -1,4 +1,3 @@
-from typing import Optional
 from config_4 import Configuration
 from doctor_5 import Doctor
 
@@ -10,7 +9,7 @@ def main() -> str:
     if save_answer:
         filename = input("Enter the name of the file where the recipe should be saved: ")
     recipe = doctor.write_recipe(filename)
-    # print(recipe)
+
     return recipe
 
 

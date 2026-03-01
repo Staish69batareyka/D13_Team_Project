@@ -1,9 +1,6 @@
-import os
-
 from email.mime.multipart import MIMEMultipart
 
 from src.config_6 import SMTPSettings, Configuration
-from src.doctor_5 import Doctor
 from src.email_6 import EmailMessage
 
 def main() -> MIMEMultipart:
@@ -12,18 +9,7 @@ def main() -> MIMEMultipart:
     email = input('Enter patient email: ')
 
     # Это обращение к атрибутам из .env
-    smtp_settings = SMTPSettings()
-
-    # Этот кусок будет нужен, если захотим отправить что-то вещественное
-    # conf = Configuration()
-    # doctor = Doctor(conf)
-    #
-    # file_path = os.path.join(
-    #     conf.base_folder,
-    #     'doctor',
-    #     f"{conf.login}.json"
-    # )
-    # recipe = doctor.write_recipe(file_path)
+    smtp_settings: SMTPSettings = SMTPSettings()
 
     # создание письма
     email = EmailMessage(
