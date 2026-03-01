@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 
 
 class EmailMessage:
-    def __init__(self, from_email, to_email, subject, body):
+    def __init__(self, from_email:str, to_email:str, subject:str, body:str):
         self.from_email = from_email
         self.to_email = to_email
         self.subject = subject

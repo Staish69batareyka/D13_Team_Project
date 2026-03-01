@@ -1,29 +1,30 @@
-import os
+# from typing import Optional
+from pydantic_settings import BaseSettings
+# import os
+# from pydantic import Field
 
+class Configuration(BaseSettings):
+    """
+    Конфигурационный класс для загрузки переменных окружения
+    """
+    login: str
+    base_folder: str
 
-class SMTPSettings:
-    def __init__(self):
-        env_vars = os.environ
+    class Config:
+        env_file = 'src/.env'
+        env_file_encoding = "utf-8"
+        case_sensitive = False
+        extra = 'ignore'  # Игнорируем дополнительные переменные
 
-        # Получаем значения и сразу их очищаем
-        self.server = env_vars.get('SMTP_SERVER', '').strip()
+class SMTPSettings(BaseSettings):
+    server: str
+    port: int
+    email: str
+    email_password: str
 
-        port_str = env_vars.get('SMTP_PORT', '').strip()
-        if port_str:
-            try:
-                self.port = int(port_str)
-            except ValueError:
-                print(f"Warning: Invalid port value: {port_str}")
-                self.port = None
-        else:
-            self.port = None
-
-        self.email = env_vars.get('SMTP_EMAIL', '').strip()
-        self.email_password = env_vars.get('SMTP_EMAIL_PASSWORD', '').strip()
-
-        # Отладка
-        print("\n=== SMTPSettings INIT ===")
-        print(f"Server: '{self.server}'")
-        print(f"Port: {self.port}")
-        print(f"Email: '{self.email}'")
-        print(f"Password length: {len(self.email_password)}")
+    class Config:
+        env_file = 'src/.env'
+        env_file_encoding = "utf-8"
+        case_sensitive = False
+        env_prefix = 'smtp_'
+        extra = 'ignore'  # Игнорируем дополнительные переменные
