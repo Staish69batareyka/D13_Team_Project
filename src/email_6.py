@@ -17,6 +17,6 @@ class EmailMessage:
         message['To'] = self.to_email
         message['Subject'] = self.subject
 
-        message.attach(MIMEText(self.body, 'body'))
+        message.attach(MIMEText(self.body, 'plain'))
 
         return message

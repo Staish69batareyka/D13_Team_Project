@@ -13,8 +13,8 @@ def main() -> MIMEMultipart:
     email = EmailMessage(
         from_email=smtp_settings.email,
         to_email=email,
-        subject='Receipt',
-        body='Test'
+        subject='Receipt for your visit on March 1',
+        body=f"Dear patient,\n\nPlease find your receipt attached (or below).\n\nThank you for your visit.\n\nBest regards,\nYour Clinic"
     )
 
     # Отправка
