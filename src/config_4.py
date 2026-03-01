@@ -6,10 +6,10 @@ class Configuration(BaseSettings):
     """
     Конфигурационный класс для загрузки переменных окружения
     """
-    login: str = Field(..., description="Логин врача")
-    base_folder: str = Field(..., description="Папка с материалами")
+    login: str 
+    base_folder: str 
     
     class Config:
         env_file = "src/.env"
         env_file_encoding = "utf-8"
-        case_sensitive = False  # чтобы не зависеть от регистра
+        case_sensitive = False  
