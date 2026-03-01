@@ -14,7 +14,7 @@ def number_of_differences(list1: List[Union[int, str, bool]], list2: List[Union[
     return len(diff)
 
 def calculate_area(shape: str, size: Union[Tuple[float, float], float]) -> Optional[float]:
-    PI = 3.14159
+    pi = 3.14159
     if not isinstance(shape, str):
         return None
     if shape == "rectangle":
@@ -26,8 +26,12 @@ def calculate_area(shape: str, size: Union[Tuple[float, float], float]) -> Optio
         return None
     elif shape == "circle":
         if isinstance(size, (int, float)):
-            area = PI * float(size) * float(size)
+            area = pi * float(size) * float(size)
             return round(area, 2)
         return None
     else:
         return None
+
+# print(number_of_differences([1, 2, 3], ['asd', 'qwe', 'fgh', 1, 3]))
+# print(calculate_area('rectangle', (5, 4)))
+# print(calculate_area('circle', (5)))
